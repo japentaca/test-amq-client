@@ -1,5 +1,5 @@
-const amqp = require('amqplib');
-require('dotenv').config();
+import amqp from 'amqplib';
+import 'dotenv/config';
 
 const queueName = 'my_queue';
 const topicName = 'my_topic';
