@@ -1,4 +1,5 @@
 const amqp = require('amqplib');
+require('dotenv').config();
 
 const queueName = 'my_queue';
 const topicName = 'my_topic';
@@ -6,7 +7,7 @@ const exchangeName = 'my_exchange';
 
 async function connectAndConsume() {
   try {
-    const connection = await amqp.connect('amqp://143.110.144.65:32771/');
+    const connection = await amqp.connect(process.env.AMQ_URL);
     const channel = await connection.createChannel();
 
     // Assert queue
